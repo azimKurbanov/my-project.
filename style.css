@@ -1,0 +1,900 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+  background: url(img/background_2.jpg);
+}
+
+@font-face {
+
+  font-family: "New_Zelek"; 
+  src: url("fonts/eng.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@media (max-width: 1900px){
+  .shadow{
+    box-shadow: #fff000 0 0 20px;
+    width: 1040px;
+    margin: 0 auto;
+    margin-bottom: 55px;
+  }
+
+  /* header======================= */
+
+  header{
+    display: block;
+    width: 1040px;
+    height: 580px;
+    background: url("img/main_2.jpg") no-repeat ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 55px;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+
+  div.main-page-1{
+    display: flex;
+    width: 1040px;
+
+  }
+
+  div.hamburger-menu{
+    width: 30vw;
+    height: 20vh;
+
+
+  }
+
+  /* скрываем чекбокс */
+  #menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fdf701;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+
+  /* контейнер меню */
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #000;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 2;
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #fff001;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600; 
+    text-decoration: none;
+    transition: 250ms;
+
+  }
+  .menu__item:hover {
+    text-shadow: #4ae5ff 1px 1px 0;
+    color: #fff001;
+    text-decoration: none;
+    /* ------------------------------------------------------------------ */
+    border-bottom: 4px solid  #fff001 ;
+    border-width: ;
+    transform: scale(1.1) translateY(-4px);
+    transition: 0.5s;
+
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+    transition: 0.5s;
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+    transition: 0.5s;
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+    transition: 0.5s;
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+    transition: 0.5s;
+  }
+
+  div.mp-info{
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  .mp-info p{
+    font-family: 'New_Zelek';
+    font-size: 20px;
+    color: #fffc00;
+    text-shadow: #55caeb 1px 1px 0;
+
+  }
+
+
+  .metro-tile{
+    display: flex;
+    width: 350px;
+    height: 80px;
+    background: #55caed;
+    margin-left: auto;
+    margin-top: 30px;
+    transition: .4s all;
+
+  }
+
+  .metro-tile:hover{
+    box-shadow: #55caed 0 0 20px;
+  }
+
+  .metro-tile-l{
+    width: 160px;
+    height: 80px;
+    background: #134858;
+    margin: 0;
+  }
+
+  .metro-tile-l img{
+    width: 80px;
+    float: left;
+  }
+
+  .metro-tile-r{
+
+    width: 150px;
+    height: 80px;
+  }
+
+  .metro-tile-r p{
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'New_Zelek';
+    font-size: 10px;
+  }
+
+  .main-page-2{
+    display: flex;
+    width: 1040px;
+    height: 300px;
+    margin-top: 50px;
+  }
+  .text-mp-2 p{
+    color: #fff000;
+    font-family: 'New_Zelek';
+    font-size: 160px;
+    margin-left: 25px;
+    opacity: 20%;
+    float: left;
+    position: absolute;
+  }
+  .mel-1{
+    position: absolute;
+    right: 100px;
+
+  }
+  .mel-2{
+    position: absolute;
+    bottom: 120px;
+    left: 220px;
+    width: 600px;
+  }
+
+
+  .img-mp-2 img{
+    display: block;
+    position: absolute;
+    top: 140px;
+    left: 270px;
+    width: 500px;
+  }
+
+  .main-page-3{
+    display: block;
+
+  }
+  .main-link-l{
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background: #55c9ec;
+    left: 240px;
+    bottom: 135px;
+    text-align: center;
+    padding-top: 13px;
+    font-size: 18px;
+    font-family: 'New_Zelek';
+    color: black;
+    text-shadow: black 1px 1px 2px;
+    box-shadow: #55c9ec 0 0 20px;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transition: .3s all;
+  }
+  .main-link-l:hover{
+
+    box-shadow: #55c9ec 0 0 50px;
+  }
+  .main-link-r {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background: #ff5903;
+    right: 240px;
+    bottom: 135px;
+    text-align: center;
+    padding-top: 13px;
+    font-size: 18px;
+    font-family: 'New_Zelek';
+    color: white;
+    text-shadow: white 1px 1px 2px;
+    box-shadow: #ff5903 0 0 20px;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transition: .3s all;
+  }
+  .main-link-r:hover{
+
+    box-shadow: #ff5903 0 0 50px;
+  }
+
+  .main-page-4{
+    display: flex;
+    width: 1040px
+    height: 40px;
+    margin-top: auto;
+  }
+  .social img{
+    width: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  .info-4{
+    width: 780px;
+    color: #fff000;
+    font-size: 14px;
+    padding: 25px;
+    text-align: center;
+  }
+  .mp-img-4{
+    margin-left: auto;
+  }
+  .mp-img-4 a img{
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+
+  /* section about=========================== */
+  section.about{
+    display: block;
+    width: 1040px;
+
+    background: url("../img/background_2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* margin-top: 175px; */
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+  }
+
+  .about-1{
+    display: flex;
+    justify-content: start;
+  }
+
+  .about-1 img{
+    display: block;
+    margin-right: 30px;
+    float: left
+
+  }
+
+  .about-1 p{
+    width: 620px;
+    padding-top: 20px;
+    display: block;
+    font-family: 'New_Zelek';
+    font-size: 14px;
+    /* width: 80vw; */
+    color: #fff001;
+    /* margin-right: auto; */
+
+  }
+
+  .about-logo{
+    padding: 0;
+    margin: auto;
+
+  }
+
+  .about-logo img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 500px;
+  }
+
+  .about-2{
+    width: 1040px;
+    height: 420px;
+    display: block;
+  }
+
+  .about-2 img{
+    display: block;
+    float: right;
+
+
+  }
+
+  .about-2 p:first-of-type{
+    padding-top: 80px;
+  }
+
+  .about-2 p{
+    display: block;
+    width: 550px;
+    height: 500px;
+    color: #fff001;
+    font-family: 'New_Zelek';
+    margin-right: auto;
+    margin-left: 50px;
+    text-align: end;
+    font-size: 14px;
+  }
+
+
+
+
+  /* section about us========================= */
+  .section_aboutus{
+    width: 1040px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff000;
+  }
+  .section_aboutus h1{
+    color: black;
+    margin-bottom: 25px;
+    font-family: 'New_Zelek';
+  }
+  .section_aboutus p{
+    width: 740px;
+    height: 140px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'New_Zelek';
+  }
+
+  .section_aboutus a{
+    width: 220px;
+    height: 46px;
+    background-color: black;
+    color: #fff000;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 13px;
+    transform: skew(-15deg);
+    font-family: 'New_Zelek';
+    /* box-decoration-break: unset; */
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 1900px) {
+  .shadow{
+    box-shadow: #fff000 0 0 20px;
+    width: 1800px;
+    margin: 0 auto;
+    margin-bottom: 55px;
+  }
+
+  /* header======================= */
+
+  header{
+    display: block;
+    width: 1800px;
+    height: 800px;
+    background: url("img/main_2.jpg") no-repeat ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 55px;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+
+  div.main-page-1{
+    display: flex;
+    width: 1800px;
+
+  }
+
+  div.hamburger-menu{
+    width: 400px;
+    height: 20vh;
+
+
+  }
+
+  /* скрываем чекбокс */
+  #menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fdf701;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+
+  /* контейнер меню */
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #000;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 2;
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #fff001;
+    font-family: 'New_Zelek', sans-serif;
+    font-size: 30px;
+    font-weight: 600; 
+    text-decoration: none;
+    transition: 250ms;
+
+  }
+  .menu__item:hover {
+    text-shadow: #4ae5ff 1px 1px 0;
+    color: #fff001;
+    text-decoration: none;
+    /* ------------------------------------------------------------------ */
+    border-bottom: 4px solid  #fff001 ;
+    border-width: ;
+    transform: scale(1.1) translateY(-4px);
+    transition: 0.3s;
+
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+    transition: 0.3s;
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+    transition: 0.3s;
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+    transition: 0.3s;
+  }
+
+  div.mp-info{
+    margin-top: 35px;
+    width: 1000px;
+  }
+
+  .mp-info p{
+    font-family: 'New_Zelek';
+    font-size: 30px;
+    color: #fffc00;
+    text-shadow: #55caeb 1px 1px 0;
+    text-align: center;
+  }
+
+
+  .metro-tile{
+    display: flex;
+    width: 400px;
+    height: 100px;
+    background: #55caed;
+    margin-left: auto;
+    margin-top: 30px;
+    transition: .4s all;
+
+  }
+
+  .metro-tile:hover{
+    box-shadow: #55caed 0 0 20px;
+  }
+
+  .metro-tile-l{
+    width: 200px;
+    height: 100px;
+    background: #134858;
+    margin: 0;
+  }
+
+  .metro-tile-l img{
+    width: 100px;
+    float: left;
+  }
+
+  .metro-tile-r{
+    width: 180px;
+    height: 80px;
+  }
+
+  .metro-tile-r p{
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'New_Zelek';
+    font-size: 15px;
+  }
+
+  .main-page-2{
+    display: flex;
+    width: 1800px;
+    height: 400px;
+    margin-top: 50px;
+  }
+  .text-mp-2 p{
+    color: #fff000;
+    font-family: 'New_Zelek';
+    font-size: 260px;
+    opacity: 20%;
+    float: left;
+    position: absolute;
+    left: 85px;
+  }
+  .mel-1{
+    width: 600px;
+    position: absolute;
+    right: 100px;
+
+  }
+  .mel-2{
+    position: absolute;
+    bottom: 80px;
+    left: 320px;
+    width: 1150px;
+
+  }
+
+
+  .img-mp-2 img{
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: 390px;
+    width: 1000px;
+  }
+
+  .main-page-3{
+    display: block;
+
+  }
+  .main-link-l{
+    display: block;
+    position: absolute;
+    width: 380px;
+    height: 85px;
+    background: #55c9ec;
+    left: 340px;
+    bottom: 115px;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 30px;
+    font-family: 'New_Zelek';
+    color: black;
+    text-shadow: black 1px 1px 2px;
+    box-shadow: #55c9ec 0 0 20px;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transition: .3s all;
+  }
+  .main-link-l:hover{
+
+    box-shadow: #55c9ec 0 0 50px;
+  }
+  .main-link-r {
+    display: block;
+    position: absolute;
+    width: 380px;
+    height: 85px;
+    background: #ff5903;
+    right: 318px;
+    bottom: 115px;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 30px;
+    font-family: 'New_Zelek';
+    color: white;
+    text-shadow: white 1px 1px 2px;
+    box-shadow: #ff5903 0 0 20px;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transition: .3s all;
+  }
+  .main-link-r:hover{
+    box-shadow: #ff5903 0 0 50px;
+  }
+
+  .main-page-4{
+    display: flex;
+    width: 1800px
+    height: 40px;
+    margin-top: auto;
+  }
+  .social img{
+    width: 45px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .info-4{
+    width: 1450px;
+    color: #fff000;
+    font-size: 20px;
+    padding: 25px;
+    text-align: center;
+  }
+  .mp-img-4{
+    margin-left: auto;
+  }
+  .mp-img-4 a img{
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+
+  /* section about=========================== */
+  section.about{
+    display: block;
+    width: 1800px;
+
+    background: url("../img/background_2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* margin-top: 175px; */
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+  }
+
+  .about-1{
+    display: flex;
+    justify-content: start;
+  }
+
+  .about-1 img{
+    display: block;
+    width: 700px;
+    height: 800px;
+    margin-right: 60px;
+    float: left
+
+  }
+
+  .about-1 p{
+    width: 800px;
+    padding-top: 50px;
+    display: block;
+    font-family: 'New_Zelek';
+    font-size: 25px;
+    /* width: 80vw; */
+    color: #fff001;
+    /* margin-right: auto; */
+
+  }
+
+  .about-logo{
+    padding: 0;
+    margin: -100px;
+  }
+
+  .about-logo img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 1200px;
+
+  }
+
+
+  .about-2 img{
+    display: block;
+    float: right;
+    width: 700px;
+    height: 900px;
+    margin-left:0;
+  }
+
+
+
+  .about-2 p:first-of-type{
+    padding-top: 150px;
+  }
+
+  .about-2 p{
+    display: block;
+    width: 800px;
+    height: 500px;
+    color: #fff001;
+    font-family: 'New_Zelek';
+    margin-right: auto;
+    margin-left: 90px;
+    text-align: end;
+    font-size: 25px;
+  }
+
+
+
+
+  /* section about us========================= */
+  .section_aboutus{
+    width: 1800px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    align-items: center;
+    background-color: #fff000;
+    margin-top: -45px;
+  }
+  .section_aboutus h1{
+    color: black;
+    margin-bottom: 25px;
+    font-family: 'New_Zelek';
+    font-size: 70px;
+  }
+  .section_aboutus p{
+    width: 1400px;
+    height: 140px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'New_Zelek';
+    font-size: 30px;
+  }
+
+  .section_aboutus a{
+    width: 420px;
+    height: 86px;
+    background-color: black;
+    color: #fff000;
+    text-align: center;
+    margin-top: 205px;
+    padding-top: 18px;
+    transform: skew(-15deg);
+    font-family: 'New_Zelek';
+    font-size: 40px;
+    /* box-decoration-break: unset; */
+  }
+}
+
